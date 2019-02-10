@@ -1,0 +1,1 @@
+SELECT M.mid, M.name, M.releaseyear, R.votes as num_rating, R.rating FROM movie M, reviews R WHERE M.mid = R.Movie AND R.rating >= (SELECT max(rating) FROM REVIEWS) ORDER BY length(M.mid) ASC, M.mid ASC;
